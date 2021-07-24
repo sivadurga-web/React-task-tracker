@@ -6,7 +6,7 @@ const AddTask = ({onAdd}) => {
     const [reminder,setReminder] = useState(false);
     const {tasks,setTasks} =  useContext(TaskContext);
     const AddTask = async (task) => {
-        const res = await fetch('http://localhost:5000/tasks',{
+        const res = await fetch('https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks',{
             method: 'POST',
             headers: {
                 'Content-type' :'application/json',
@@ -15,6 +15,7 @@ const AddTask = ({onAdd}) => {
         })
         const data = await res.json();
         setTasks([...tasks,data])
+        console.log(res);
     }
  const addToTask = (e) => {
         e.preventDefault();

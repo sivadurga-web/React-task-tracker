@@ -21,7 +21,7 @@ function App() {
   },[])
   // Fetching tasks
   const fetchTasks = async() => {
-    const res = await fetch('http://localhost:5000/tasks');
+    const res = await fetch('https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks');
     const data = await res.json();
     console.log(data);
     return data
