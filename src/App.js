@@ -21,7 +21,8 @@ function App() {
   },[])
   // Fetching tasks
   const fetchTasks = async() => {
-    const res = await fetch('https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks');
+    const res = await fetch('https://reactjs-task-tracker-app.herokuapp.com/tasks'); 
+    // change the server address to your server in app.js, editTask.js, AddTask.js, task.js
     const data = await res.json();
     console.log(data);
     return data

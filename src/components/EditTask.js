@@ -7,7 +7,7 @@ const EditTask = ({task,updateShowEditTask}) => {
     const [reminder,setReminder] = useState(task.reminder);
     const {tasks,setTasks} = useContext(TaskContext);
     const fetchTask = async (id) => {
-        const res = await fetch(`https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks/${id}`);
+        const res = await fetch(`https://reactjs-task-tracker-app.herokuapp.com/tasks/${id}`);
         const data = await res.json();
         return data
     }
@@ -16,7 +16,7 @@ const EditTask = ({task,updateShowEditTask}) => {
         const id = task.id
         const taskToToggle = await fetchTask(id);
         const updTask = {...taskToToggle,name: name,time: time,reminder: reminder}
-        const res = await fetch(`https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks/${id}`, {
+        const res = await fetch(`https://reactjs-task-tracker-app.herokuapp.com/tasks/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type' :'application/json',

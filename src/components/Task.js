@@ -9,13 +9,13 @@ const Task = ({task}) => {
     const [showEditTask, setShowEditTask] = useState(false);
    // delete Task function
     const deleteTask = async(id) => {  
-       await fetch(`https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks/${id}`,{
+       await fetch(`https://reactjs-task-tracker-app.herokuapp.com/tasks/${id}`,{
            method: 'DELETE',
        })
         setTasks( tasks.filter( task=> (task.id!== id) ))
     }
     const fetchTask = async (id) => {
-        const res = await fetch(`https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/tasks/${id}`);
+        const res = await fetch(`https://reactjs-task-tracker-app.herokuapp.com/tasks/${id}`);
         const data = await res.json();
         return data
     }
@@ -23,7 +23,7 @@ const Task = ({task}) => {
     const ToggleReminder = async (id) => {  
         const taskToToggle = await fetchTask(id);
         const updTask = {...taskToToggle, reminder: !taskToToggle.reminder}
-        const res = await fetch(`https://my-json-server.typicode.com/sivadurga-web/React-task-tracker/taskss/${id}`, {
+        const res = await fetch(`https://reactjs-task-tracker-app.herokuapp.com/tasks/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type' :'application/json',
