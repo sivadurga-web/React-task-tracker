@@ -1,12 +1,15 @@
 // Header file - adds the title of the page
 import propTypes  from 'prop-types'
 import Button from './Button'
-
+import { useLocation } from 'react-router-dom'
 const Header = ({title,onAdd, isShowed}) => {
+    const location =  useLocation();
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button color={isShowed ? 'red' : 'green'} text={isShowed ? 'Close' : 'Add Task'} onAdd={onAdd} />
+            { location.pathname==='/' && (
+                <Button color={isShowed ? 'red' : 'green'} text={isShowed ? 'Close' : 'Add Task'} onAdd={onAdd} />
+            )}
         </header>
     )
 }
