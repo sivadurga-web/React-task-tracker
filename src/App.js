@@ -40,7 +40,7 @@ function App() {
       <TaskContext.Provider value={value} >
       <Header onAdd={()=>setShowAddTask(!ShowAddTask)} isShowed={ShowAddTask}/>
       { ShowAddTask && <AddTask onAdd={()=>setShowAddTask(!ShowAddTask)} />}
-      <Route path ='/#' exact render={(props)=>(
+      <Route path ='/' exact render={(props)=>(
       // <Route path ='/' exact render={(props)=>(
         <>
         <Tasks />
@@ -48,7 +48,7 @@ function App() {
       )} />
       </TaskContext.Provider>
 
-      <Route path='/#/about' component={About} />
+      <Route path='/' component={About} />
       <Footer />
     </div>
     </Router>
