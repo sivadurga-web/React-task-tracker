@@ -3,7 +3,8 @@ const Footer = () => {
     return (
         <footer style={{textAlign: 'center'}}>
             <p> Copyright &copy; 2021</p>
-            <Link to="/about">About</Link>
+            <Link to="/React-task-tracker/about">About</Link>
+            {/* <Link to="/about">About</Link> */}
         </footer>
     )
 }
