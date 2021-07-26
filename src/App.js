@@ -5,8 +5,8 @@ import Task from "./components/Task";
 import { useState,useEffect } from "react";
 import AddTask from "./components/AddTask";
 import Footer from "./components/Footer";
-import {HashRouter as Router, Route} from 'react-router-dom' //use when using github pages
-// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import {HashRouter as Router, Route} from 'react-router-dom' //use when using github pages
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "./components/About";
 export const TaskContext = React.createContext();
 
@@ -35,19 +35,20 @@ function App() {
   // Add task expand or collapse button
   const [ShowAddTask,setShowAddTask] = useState(false);
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router >
     <div className="container" id='container'>
       <TaskContext.Provider value={value} >
       <Header onAdd={()=>setShowAddTask(!ShowAddTask)} isShowed={ShowAddTask}/>
       { ShowAddTask && <AddTask onAdd={()=>setShowAddTask(!ShowAddTask)} />}
-      <Route path ='/' exact render={(props)=>(
+      <Route path ='/#' exact render={(props)=>(
+      // <Route path ='/' exact render={(props)=>(
         <>
         <Tasks />
         </>
       )} />
       </TaskContext.Provider>
 
-      <Route path='/about' component={About} />
+      <Route path='/#/about' component={About} />
       <Footer />
     </div>
     </Router>
