@@ -49,7 +49,7 @@ function App() {
       )} />
       </TaskContext.Provider>
 
-      <Route path='/' component={About} />
+      <Route path='/about' component={About} />
       <Footer />
     </div>
     </Router>
