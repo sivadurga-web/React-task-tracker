@@ -39,7 +39,7 @@ function App() {
       <TaskContext.Provider value={value} >
       <Header onAdd={()=>setShowAddTask(!ShowAddTask)} isShowed={ShowAddTask}/>
       { ShowAddTask && <AddTask onAdd={()=>setShowAddTask(!ShowAddTask)} />}
-      <Route path ='/React-task-tracker' exact render={(props)=>(
+      <Route path ='/React-task-tracker/' exact render={(props)=>(
       // <Route path ='/' exact render={(props)=>(
         <>
         <Tasks />
